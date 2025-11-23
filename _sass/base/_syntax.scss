@@ -3,6 +3,33 @@
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
+:root {
+  --code-dot-red: #ff5f57;
+  --code-dot-yellow: #febc2e;
+  --code-dot-green: #28c840;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --code-dot-red: #ff6159;
+    --code-dot-yellow: #ffc230;
+    --code-dot-green: #2bd14f;
+  }
+}
+
+html[data-theme="dark"] {
+  --code-dot-red: #ff6159;
+  --code-dot-yellow: #ffc230;
+  --code-dot-green: #2bd14f;
+}
+
+html[data-mode="light"] {
+  --code-dot-red: #ff5f57;
+  --code-dot-yellow: #febc2e;
+  --code-dot-green: #28c840;
+}
+
+
 .highlighter-rouge {
   color: var(--highlighter-rouge-color);
   margin-top: 0.5rem;
@@ -136,11 +163,11 @@ div[class^='language-'] {
         width: v.$code-dot-size;
         height: v.$code-dot-size;
         border-radius: 50%;
-        background-color: var(--code-header-muted-color);
+        background-color: var(--code-dot-red);
         box-shadow: (v.$code-dot-size + v.$code-dot-gap) 0 0
-            var(--code-header-muted-color),
+            var(--code-dot-yellow),
           (v.$code-dot-size + v.$code-dot-gap) * 2 0 0
-            var(--code-header-muted-color);
+            var(--code-dot-green);
       }
 
       span {
