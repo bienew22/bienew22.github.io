@@ -83,6 +83,8 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
     padding-right: 1.25rem;
     width: 100%;
 
+    font-family: "Source Sans Pro", sans-serif !important;
+
     @include bp.lg {
       margin-top: 3rem;
     }
