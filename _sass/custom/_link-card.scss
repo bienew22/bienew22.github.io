@@ -1,0 +1,180 @@
+/* ================================
+   My Link Card Theme Tokens
+================================ */
+:root {
+  --my-card-bg: #ffffff;
+  --my-card-border: #e6e6e6;
+  --my-card-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --my-card-overlay-bg: rgba(255, 255, 255, 0);
+  --my-card-hover-border: #cfcfcf;
+
+  --my-card-title: #111111;
+  --my-card-desc: #555555;
+  --my-card-domain: #8a8a8a;
+
+  --my-card-thumb-bg: #f3f4f6;
+  --my-card-thumb-border: #ededed;
+}
+
+/* system dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --my-card-bg: #0f1115;
+    --my-card-border: #2a2e36;
+    --my-card-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    --my-card-hover-border: #3b414c;
+
+    --my-card-title: #f4f6f8;
+    --my-card-desc: #c7cbd1;
+    --my-card-domain: #9aa1aa;
+
+    --my-card-thumb-bg: #171a20;
+    --my-card-thumb-border: #2a2e36;
+  }
+}
+
+html[data-mode="light"] {
+  --my-card-bg: #ffffff;
+  --my-card-border: #e6e6e6;
+  --my-card-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --my-card-overlay-bg: rgba(255, 255, 255, 0);
+  --my-card-hover-border: #cfcfcf;
+
+  --my-card-title: #111111;
+  --my-card-desc: #555555;
+  --my-card-domain: #8a8a8a;
+
+  --my-card-thumb-bg: #f3f4f6;
+  --my-card-thumb-border: #ededed;
+}
+
+html[data-mode="dark"] {
+  --my-card-bg: #0f1115;
+  --my-card-border: #2a2e36;
+  --my-card-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  --my-card-hover-border: #3b414c;
+
+  --my-card-title: #f4f6f8;
+  --my-card-desc: #c7cbd1;
+  --my-card-domain: #9aa1aa;
+
+  --my-card-thumb-bg: #171a20;
+  --my-card-thumb-border: #2a2e36;
+}
+
+/* ================================
+   Card Layout
+================================ */
+.my_link_card {
+  margin: 14px 0;
+  position: relative;
+  display: flex;
+  gap: 18px;
+  cursor: pointer;
+
+  border: 1px solid var(--my-card-border);
+  background: var(--my-card-bg);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: var(--my-card-shadow);
+
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+
+  /* 사진처럼 높이 균형 잡히게 */
+  align-items: center;
+}
+
+.my_link_card:hover {
+  border-color: var(--my-card-hover-border);
+  transform: translateY(-1px);
+}
+
+.my_link_card_overlay {
+  background: var(--my-card-overlay-bg);
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* ================================
+   Thumbnail (Left)
+================================ */
+.my_link_card_thumb {
+  flex: 0 0 220px;
+  height: 150px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--my-card-thumb-bg);
+  position: relative;
+}
+
+/* 이미지 대신 넣는 박스 */
+.my_link_card_bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;        /* 이미지 꽉 채움 */
+  background-position: center;   /* 센터 정렬 */
+  background-repeat: no-repeat;
+}
+
+/* ================================
+   Body (Right)
+================================ */
+.my_link_card_body {
+  min-width: 0; /* 말줄임 필수 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.my_link_card_title {
+  font-size: 1.6rem;   /* 사진처럼 큼직한 제목 */
+  font-weight: 800;
+  color: var(--my-card-title);
+  line-height: 1.3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.my_link_card_desc {
+  font-size: 1rem;
+  color: var(--my-card-desc);
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* 2줄 제한 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.my_link_card_domain {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--my-card-domain);
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 640px) {
+  .my_link_card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .my_link_card_thumb {
+    width: 100%;
+    flex-basis: auto;
+    height: 100px;
+  }
+
+  .my_link_card_title {
+    white-space: normal; /* 모바일에선 2줄 허용 */
+  }
+}
