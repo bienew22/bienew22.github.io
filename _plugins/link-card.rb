@@ -31,7 +31,7 @@ module Jekyll
 
         desc = doc.at('meta[property="og:description"]')&.[]("content") ||
                doc.at('meta[name="description"]')&.[]("content") ||
-               ""
+               " "
 
         image = doc.at('meta[property="og:image"]')&.[]("content") || ""
 

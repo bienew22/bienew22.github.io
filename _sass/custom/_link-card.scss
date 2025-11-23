@@ -125,6 +125,7 @@ html[data-mode="dark"] {
 ================================ */
 .my_link_card_body {
   min-width: 0; /* 말줄임 필수 */
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,7 +133,7 @@ html[data-mode="dark"] {
 }
 
 .my_link_card_title {
-  font-size: 1.6rem;   /* 사진처럼 큼직한 제목 */
+  font-size: 1.3rem;   /* 사진처럼 큼직한 제목 */
   font-weight: 800;
   color: var(--my-card-title);
   line-height: 1.3;
