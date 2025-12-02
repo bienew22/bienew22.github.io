@@ -21,7 +21,7 @@ for (int i = 0; i < arr.length; i++) {
 여기서 반복자(Iterator) 패턴은 변수 **i의 기능을 대신**하는 것으로 데이터 집합에 대하여 **순차적인 접근을 지원하는 패턴입니다.**
 
 ### **패턴 구조**
-![반복자 패턴 다이어그램](/1-iterator.png){: w="90%" .bg-white}
+![반복자 패턴 다이어그램](/99-iterator.png){: w="90%" .bg-white}
 
 - Aggregate (인터페이스)
     - 집합체(컬렉션) 역할, ConreateIterator 객체를 반환하는 API 제공.
