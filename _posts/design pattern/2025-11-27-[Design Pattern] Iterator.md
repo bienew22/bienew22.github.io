@@ -2,11 +2,12 @@
 title: "[Design Pattern] Iterator"
 author: bienew22
 date: 2025-11-27 21:00:00 +0900
+last_modified_at: 2025-12-03 17:00:00 +0900
 categories: [개념 정리, Design Pattern]
 tags: [디자인 패턴, 반복자 패턴]
 media_subpath: /assets/img/_design-pattern
 ---
-본문으로 들어가기 앞서 제가 생각하는 반복자(Iterator) 패턴의 핵심은 **"구현과 분리하여 반복할 수 있음"**입니다. 
+본문으로 들어가기에 앞서 제가 생각하는 반복자(Iterator) 패턴의 핵심은 **"구현과 분리하여 반복할 수 있음"**입니다. 
 해당 글을 읽고 해당 워딩을 이해 되면 좋을 것 같습니다.
 
 ## **Iterator Pattern**
