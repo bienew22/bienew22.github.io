@@ -21,7 +21,7 @@ media_subpath: /assets/img/_design-pattern
 어댑터 패턴은 기존 클래스를 **상속**을 통하여 호환성을 추가하거나, 기존 클래스의 역할을 **위임** 받아서 호환성을 추가하는 방법이 존재합니다.
 
 ### **상속을 사용**
-![반복자 패턴 다이어그램](/98-adapter-1.png){: w="95%" .bg-white}
+![어댑터 패턴 다이어그램](/98-adapter-1.png){: w="95%" .bg-white}
 _상속을 사용한 구현 했을 때 다이어그램_
 
 - Target (인터페이스)
@@ -236,7 +236,7 @@ class Clinet {
 
 class Main {
     void main() {
-        Client aClient = new Client(new Payment(new CardAPI()));
+        Client aClient = new Client(new CardAdapter(new CardAPI()));
         aClient.pay(10000);
     }
 }
@@ -275,11 +275,11 @@ class Clinet {
 class Main {
     void main() {
         // 카드사 결제 요청.
-        Client aClient = new Client(new Payment(new CardAPI()));
+        Client aClient = new Client(new CardAdapter(new CardAPI()));
         aClient.pay(10000);
 
         // 토스 통한 결제 요청.
-        Client bClient = new Client(new Payment(new TossAPI()));
+        Client bClient = new Client(new TossAdapter(new TossAPI()));
         bClient.pay(10000);
     }
 }
