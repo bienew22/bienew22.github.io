@@ -6,8 +6,7 @@ categories: [개념 정리, Design Pattern]
 tags: [디자인 패턴, 템플릿 메서드 패턴]
 media_subpath: /assets/img/_design-pattern
 ---
-본문으로 들어가기에 앞서 제가 생각하는 템플릿 메서드(Template Method) 패턴의 핵심은 **"처리 과정의 은닉"**입니다. 
-해당 글을 읽고 해당 워딩을 이해 되면 좋을 것 같습니다.
+본문으로 들어가기에 앞서 제가 생각하는 템플릿 메서드(Template Method) 패턴은 **"처리 과정의 은닉"**입니다. 
 
 ## **Template Method Pattern**
 템플릿이란 어떤 것을 만들 때 기본적인 틀이나 형식을 제공하여 사용자가 내용을 채워 넣을 수 있도록 만든 양식을 의미합니다.
