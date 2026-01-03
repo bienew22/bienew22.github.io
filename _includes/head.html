@@ -9,6 +9,26 @@
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
   >
 
+  <!-- localStorage theme 정보를 가져와서 설정-->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem("theme");
+
+        if (saved === 'dark' || saved === 'light') {
+          // 저장된게 있는 경우.
+          document.documentElement.setAttribute('data-mode', saved);
+        } else {
+          // 저장된게 없는 경우.
+          document.documentElement.setAttribute('data-mode', "{{ site.theme_mode }}");
+        }
+      } catch(e) {
+        // localStorage에 접근할 수 없는 경우
+        document.documentElement.setAttribute('data-mode', "{{ site.theme_mode }}");
+      }
+    })();
+  </script>
+
   {%- capture seo_tags -%}
     {% seo title=false %}
   {%- endcapture -%}
