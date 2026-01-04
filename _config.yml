@@ -86,6 +86,7 @@ pageviews:
 #
 # Available options:
 #
+#     keep empty will follow the system prefre color
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #

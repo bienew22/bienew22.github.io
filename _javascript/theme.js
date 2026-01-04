@@ -7,8 +7,7 @@ class Theme {
   static #modeKey = 'mode';
   static #modeAttr = 'data-mode';
   static #darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
-  static switchable = !document.documentElement.hasAttribute(this.#modeAttr);
-
+  
   static get DARK() {
     return 'dark';
   }
@@ -38,6 +37,9 @@ class Theme {
     }
   }
 
+  /**
+   * 현재 theme 모드 String 값 리턴.
+   */
   static get #mode() {
     return (
       sessionStorage.getItem(this.#modeKey) ||
@@ -74,9 +76,6 @@ class Theme {
    * Initializes the theme based on system preferences or stored mode
    */
   static init() {
-    if (!this.switchable) {
-      return;
-    }
 
     this.#darkMedia.addEventListener('change', () => {
       const lastMode = this.#mode;
@@ -102,11 +101,8 @@ class Theme {
    * Flips the current theme mode
    */
   static flip() {
-    if (this.#hasMode) {
-      this.#clearMode();
-    } else {
-      this.#sysDark ? this.#setLight() : this.#setDark();
-    }
+    this.visualState == this.DARK ? this.#setLight() : this.#setDark();
+
     this.#notify();
   }
 
