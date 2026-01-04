@@ -1,0 +1,19 @@
+{% assign level = include.level | default: 5 %}
+
+{% assign level_num = level | plus: 0 %}
+
+{% if level_num < 1 or level_num > 5 %}
+  {% assign level = 5 %}
+{% endif %}
+
+<details class="nt-toggle nt-toggle-h{{ level }}">
+  <summary>
+    <span class="nt-toggle-title">
+      {{ include.title }}
+    </span>
+  </summary>
+
+  <div class="nt-toggle-body">
+    {{ include.content | markdownify }}
+  </div>
+</details>
