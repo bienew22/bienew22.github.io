@@ -1,68 +1,151 @@
-/* ▼ 공통 토글 스타일 */
-.nt-toggle {
-  margin: 8px 0;
-  padding: 4px 4px;
-  border-radius: 6px;
+/* =========================
+   Notion-style Toggle (Light/Dark)
+   ========================= */
+
+/* 토글 전용 컬러 토큰 (기본: Light) */
+:root {
+  --notion-bg: rgba(0, 0, 0, 0.015);
+  --notion-bg-open: rgba(0, 0, 0, 0.03);
+  --notion-bg-hover: rgba(0, 0, 0, 0.05);
+
+  --notion-border: rgba(0, 0, 0, 0.08);
+  --notion-border-strong: rgba(0, 0, 0, 0.14);
+
+  --notion-text: rgba(0, 0, 0, 0.88);
+  --notion-text-muted: rgba(0, 0, 0, 0.62);
+
+  --notion-focus: rgba(0, 0, 0, 0.22);
+  --notion-shadow: 0 1px 0 rgba(0,0,0,0.02);
 }
 
-.nt-toggle > summary {
+/* 다크 모드 토큰 */
+/* 다크 모드 토큰 */
+html[data-theme="dark"],
+html[data-mode="dark"] {
+  --notion-bg: rgba(255, 255, 255, 0.02);
+  --notion-bg-open: rgba(255, 255, 255, 0.05);
+  --notion-bg-hover: rgba(255, 255, 255, 0.07);
+
+  --notion-border: rgba(255, 255, 255, 0.10);
+  --notion-border-strong: rgba(255, 255, 255, 0.18);
+
+  --notion-text: rgba(255, 255, 255, 0.92);
+  --notion-text-muted: rgba(255, 255, 255, 0.68);
+
+  --notion-focus: rgba(255, 255, 255, 0.26);
+  --notion-shadow: 0 1px 0 rgba(255,255,255,0.02);
+}
+
+
+/* ▼ 공통 토글 스타일 */
+.notion-toggle {
+  margin: 10px 0;
+  border: 1px solid var(--notion-border);
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: var(--notion-shadow);
+  overflow: hidden;
+}
+
+/* summary */
+.notion-toggle > summary {
   list-style: none;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 2px;
+  gap: 8px;
+
+  padding: 10px 12px;
+  color: var(--notion-text);
+  user-select: none;
+  outline: none;
 }
 
-.nt-toggle > summary::-webkit-details-marker {
+/* 기본 마커 제거 */
+.notion-toggle > summary::-webkit-details-marker {
   display: none;
 }
 
 /* ▶ 아이콘 */
-.nt-toggle > summary::before {
-  content: "▶";
-  font-size: 0.8em;
+.notion-toggle > summary::before {
+  content: "▸";
+  font-size: 1.2em;
+  width: 1.2em;
+  text-align: center;
+  flex-shrink: 0;
+
+  line-height: 1;
+  opacity: 0.8;
   transform: rotate(0deg);
-  transition: transform .15s ease;
-  opacity: .7;
+  transition: transform 160ms ease, opacity 160ms ease;
 }
 
-.nt-toggle[open] > summary::before {
+
+.notion-toggle-h1 > summary::before { font-size: 1.35em; }
+.notion-toggle-h2 > summary::before { font-size: 1.25em; }
+.notion-toggle-h3 > summary::before { font-size: 1.15em; }
+.notion-toggle-h4 > summary::before { font-size: 1.05em; }
+.notion-toggle-h5 > summary::before { font-size: 1.0em; }
+
+.notion-toggle[open] > summary::before {
   transform: rotate(90deg);
+  opacity: 0.95;
 }
 
-/* 내용 */
-.nt-toggle-body {
-  margin-top: 4px;
-  padding: 4px 0 4px 10px;
-  line-height: 1.6;
-  border-left: 2px solid rgba(0,0,0,.05);
+/* hover / active */
+.notion-toggle > summary:hover {
+  background: var(--notion-bg-hover);
 }
 
-.nt-toggle-h1 > summary .nt-toggle-title { font-size: 1.8rem; font-weight: 700; }
-.nt-toggle-h2 > summary .nt-toggle-title { font-size: 1.5rem; font-weight: 600; }
-.nt-toggle-h3 > summary .nt-toggle-title { font-size: 1.25rem; font-weight: 600; }
-.nt-toggle-h4 > summary .nt-toggle-title { font-size: 1.05rem; font-weight: 500; }
+.notion-toggle > summary:active {
+  background: var(--notion-bg-open);
+}
 
-.nt-toggle-h5 > summary .nt-toggle-title {
+/* 키보드 포커스 */
+.notion-toggle > summary:focus-visible {
+  box-shadow: 0 0 0 3px var(--notion-focus);
+}
+
+/* open 상태 */
+.notion-toggle[open] {
+  border-color: var(--notion-border-strong);
+  background: var(--notion-bg);
+}
+
+.notion-toggle[open] > summary {
+  background: var(--notion-bg-open);
+}
+
+/* 제목 */
+.notion-toggle-title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* 내용 영역 */
+.notion-toggle-body {
+  padding: 10px 12px 12px 12px;
+  line-height: 1.7;
+  color: var(--notion-text);
+  border-top: 1px solid var(--notion-border);
+}
+
+/* 본문 간격 보정 */
+.notion-toggle-body > :first-child { margin-top: 0; }
+.notion-toggle-body > :last-child { margin-bottom: 0; }
+
+/* 레벨별 타이포 */
+.notion-toggle-h1 > summary .notion-toggle-title { font-size: 1.55rem; font-weight: 750; }
+.notion-toggle-h2 > summary .notion-toggle-title { font-size: 1.30rem; font-weight: 700; }
+.notion-toggle-h3 > summary .notion-toggle-title { font-size: 1.15rem; font-weight: 650; }
+.notion-toggle-h4 > summary .notion-toggle-title { font-size: 1.02rem; font-weight: 620; }
+.notion-toggle-h5 > summary .notion-toggle-title {
   font-size: inherit;
   font-weight: 600;
-  color: rgba(0,0,0,.88);
+  color: var(--notion-text);
 }
 
-.nt-toggle-h5[open] {
-  background: rgba(0,0,0,.03);
-}
-
-.nt-toggle-h5 > summary:hover {
-  background: rgba(0,0,0,.04);
-  border-radius: 4px;
-}
-
-html[data-theme="dark"] .nt-toggle-h5 > summary .nt-toggle-title {
-  color: rgba(255,255,255,.9);
-}
-
-html[data-theme="dark"] .nt-toggle-h5[open] {
-  background: rgba(255,255,255,.04);
+/* h5 노션 느낌 */
+.notion-toggle-h5[open] {
+  background: var(--notion-bg);
 }
