@@ -1,0 +1,14 @@
+/* 제곱 표기 기본 정리 */
+.math-power__exp {
+  font-size: 0.75em;
+  vertical-align: baseline; /* super 제거 */
+  position: relative;
+  top: -0.6em;              /* 위로 올리되, 과하지 않게 */
+}
+
+
+/* code 모드일 때 (rouge 인라인 코드 + math-power) */
+code.highlighter-rouge.math-power .math-power__exp {
+  /* code 안에서 sup가 너무 위로 튀거나 줄간격 깨질 때 보정 */
+  line-height: 0;
+}
