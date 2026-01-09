@@ -11,6 +11,19 @@ permalink: /sitemap.xml
     <loc>{{ site.url }}{{ site.baseurl }}/</loc>
     <priority>1.0</priority>
   </url>
+
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/categories/</loc>
+  </url>
+
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/tags/</loc>
+  </url>
+
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/archives/</loc>
+  </url>
+
   <url>
     <loc>{{ site.url }}{{ site.baseurl }}/about/</loc>
   </url>
