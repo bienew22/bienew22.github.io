@@ -1,6 +1,9 @@
 {%- assign text = include.content | default: "" -%}
 
-{%- assign inline_enabled = include.inline == true or include.inline == "true" -%}
+{%- assign inline_enabled = include.inline | default: true -%}
+{%- if inline_enabled == "false" -%}
+  {%- assign inline_enabled = false -%}
+{%- endif -%}
 
 {%- comment -%}
 토큰 규칙: {{pow:BASE|EXP}}
