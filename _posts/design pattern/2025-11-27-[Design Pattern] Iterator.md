@@ -6,8 +6,10 @@ last_modified_at: 2025-12-03 17:00:00 +0900
 categories: [개념 정리, Design Pattern]
 tags: [디자인 패턴, 반복자 패턴]
 media_subpath: /assets/img/_design-pattern
+image:
+    path: /base.png
 ---
-본문으로 들어가기에 앞서 제가 생각하는 반복자(Iterator) 패턴은 **"구현과 분리하여 반복할 수 있음"**입니다. 
+제가 느낀 반복자(Iterator) 패턴의 키워드는 **"구현과 분리하여 반복"**입니다. 
 
 ## **Iterator Pattern**
 저희는 코드를 작성하다 보면은 루프를 다양하게 사용됩니다. 

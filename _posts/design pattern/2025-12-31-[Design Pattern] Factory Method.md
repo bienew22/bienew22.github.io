@@ -5,8 +5,10 @@ date: 2025-12-31 10:00:00 +0900
 categories: [개념 정리, Design Pattern]
 tags: [디자인 패턴, 팩토리 메서드 패턴]
 media_subpath: /assets/img/_design-pattern
+image:
+    path: /base.png
 ---
-본문으로 들어가기에 앞서 제가 생각하는 팩토리 메서드(Factory Method) 패턴은 **"생성 책임 위임"**입니다. 
+제가 느낀 팩토리 메서드(Factory Method) 패턴의 키워드는 **"생성 책임 위임"**입니다. 
 
 ## **Factory Method Pattern**
 팩토리 메서드 패턴은 **템플릿 메서드 패턴을 인스턴스 생성에 적용한 패턴**입니다.

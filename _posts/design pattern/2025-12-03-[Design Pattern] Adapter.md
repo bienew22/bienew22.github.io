@@ -5,8 +5,10 @@ date: 2025-12-03 16:59:00 +0900
 categories: [개념 정리, Design Pattern]
 tags: [디자인 패턴, 어댑터 패턴]
 media_subpath: /assets/img/_design-pattern
+image:
+    path: /base.png
 ---
-본문으로 들어가기에 앞서 제가 생각하는 어댑터(Adapter) 패턴은 **"수정 없이 호환성 추가"**입니다. 
+제가 느낀 어댑터(Adapter) 패턴의 키워드는 **"수정 없이 호환성 추가"**입니다. 
 
 ## **Adapter Pattern**
 일상생활에서 사용하는 충전기는 220V의 교류 전원을 전자기기가 사용할 수 있도록 직류 전원으로 변환해 주는 역할을 합니다.

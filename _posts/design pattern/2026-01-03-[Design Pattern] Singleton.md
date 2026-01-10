@@ -5,8 +5,10 @@ date: 2026-01-03 18:00:00 +0900
 categories: [개념 정리, Design Pattern]
 tags: [디자인 패턴, 싱글톤 패턴]
 media_subpath: /assets/img/_design-pattern
+image:
+    path: /base.png
 ---
-본문으로 들어가기에 앞서 제가 생각하는 싱글톤(Singleton) 패턴은 **"외로운 인스턴스"**입니다. 
+제가 느낀 싱글톤(Singleton) 패턴의 키워드는 **"유일 객체"**입니다. 
 
 ## **Singleton Pattern**
 싱글톤 패턴은 인스턴스가 하나만 존재하는 것을 보증하는 패턴입니다.
