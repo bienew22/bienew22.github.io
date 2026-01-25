@@ -141,6 +141,8 @@ header {
 .post-tags {
   line-height: 2rem;
 
+  margin-bottom: 20px;
+
   .post-tag {
     &:hover {
       @extend %tag-hover;
@@ -250,6 +252,10 @@ header {
   background: linear-gradient(var(--main-bg) 50%, transparent);
 }
 
+html[data-mode="dark"] #toc-wrapper {
+  background-color: rgb(27 27 30);;
+}
+
 #toc-wrapper {
   top: 0;
   transition: top 0.2s ease-in-out;
@@ -257,6 +263,8 @@ header {
   max-height: 100vh;
   scrollbar-width: none;
   margin-top: 2rem;
+
+  background-color: white;
 
   &:not(.invisible) {
     -webkit-animation: fade-up 0.8s;

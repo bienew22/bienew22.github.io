@@ -45,6 +45,10 @@ layout: compress
               {% assign _include_path = _include | append: '.html' %}
               {% include {{ _include_path }} lang=lang %}
             {% endfor %}
+
+            <!-- 사이드바 -->
+            {% include adsense.html %}
+
           </aside>
         </div>
 
@@ -57,6 +61,9 @@ layout: compress
             {% endfor %}
 
             {% include_cached footer.html lang=lang %}
+
+            <!-- 페이지 전체 하단 -->
+            {% include adsense.html %}
           </div>
         </div>
 
