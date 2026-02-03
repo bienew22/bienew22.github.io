@@ -28,7 +28,7 @@ image:
 
 ## **구현 예시**
 
-push test
+push test22
 ---
 
 ## **참고 문헌**
