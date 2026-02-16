@@ -47,7 +47,9 @@ layout: compress
             {% endfor %}
 
             <!-- 사이드바 -->
+            {% comment %}
             {% include adsense.html %}
+            {% endcomment %}
 
           </aside>
         </div>
@@ -63,7 +65,9 @@ layout: compress
             {% include_cached footer.html lang=lang %}
 
             <!-- 페이지 전체 하단 -->
+            {% comment %}
             {% include adsense.html %}
+            {% endcomment %}
           </div>
         </div>
 

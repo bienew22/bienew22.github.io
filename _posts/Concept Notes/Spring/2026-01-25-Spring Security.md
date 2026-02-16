@@ -205,6 +205,7 @@ Spring Security `5.x 이하` 버전에서는 `FilterSecurityInterceptor`를 사�
                 .anyRequest().authenticated();
     }
     ```
+
 #### 6+ 버전
 - 요청 URL과 매칭되는 AuthorizationMananger를 선택하여 인가 결정을 위임하는 구조입니다.
 - URL 접근 권한 설정
