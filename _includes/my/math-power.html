@@ -1,9 +1,12 @@
 {%- assign text = include.content | default: "" -%}
 
-{%- assign inline_enabled = include.inline | default: true -%}
-{%- if inline_enabled == "false" -%}
-  {%- assign inline_enabled = false -%}
+{%- if include.inline != nil -%}
+  {%- assign inline_raw = include.inline  -%}
+{%- else -%}
+  {%- assign inline_raw = true -%}
 {%- endif -%}
+
+{%- assign inline_enabled = inline_raw != "false" -%}
 
 {%- comment -%}
 토큰 규칙: {{pow:BASE|EXP}}
@@ -40,7 +43,14 @@
   {%- assign out = rebuilt -%}
 {%- endif -%}
 
-{%- if inline_enabled -%}
+<!-- DEBUG: include.inline = [{{ include.inline }}] -->
+<!-- DEBUG: include.inline.inspect = [{{ include.inline | inspect }}] -->
+<!-- DEBUG: inline_raw = [{{ inline_raw }}] -->
+<!-- DEBUG: inline_raw.inspect = [{{ inline_raw | inspect }}] -->
+<!-- DEBUG: inline_enabled = [{{ inline_enabled }}] -->
+<!-- DEBUG: inline_enabled.inspect = [{{ inline_enabled | inspect }}] -->
+
+{%- if inline_enabled == true -%}
   <code class="language-plaintext highlighter-rouge my-inline-code">{{ out | strip }}</code>
 {%- else -%}
   {{ out | strip }}
