@@ -6,7 +6,9 @@
   {% assign level = 5 %}
 {% endif %}
 
-<details class="notion-toggle notion-toggle-h{{ level }}">
+{% assign open = include.open | default: false %}
+
+<details class="notion-toggle notion-toggle-h{{ level }}" {% if open != false %}open{% endif %}>
   <summary>
     <span class="notion-toggle-title">
       {{ include.title }}
