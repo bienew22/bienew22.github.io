@@ -1,6 +1,6 @@
 ---
 title: "[Design Pattern] Iterator"
-slug: "iterator pattern"
+slug: "design iterator pattern"
 author: bienew22
 date: 2025-11-27 21:00:00 +0900
 last_modified_at: 2025-12-03 17:00:00 +0900

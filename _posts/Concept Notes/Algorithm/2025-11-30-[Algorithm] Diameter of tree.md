@@ -1,6 +1,6 @@
 ---
 title: "[Algorithm] Diameter of tree"
-slug: "diameter of tree algorithm"
+slug: "algorithm diameter of tree"
 author: bienew22
 date: 2025-11-30 21:07:00 +0900
 categories: [개념 정리, 알고리즘]

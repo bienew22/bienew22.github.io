@@ -1,6 +1,6 @@
 ---
 title: "[Design Pattern] Factory Method"
-slug: "factory method pattern"
+slug: "design factory method pattern"
 author: bienew22
 date: 2025-12-31 10:00:00 +0900
 categories: [개념 정리, Design Pattern]
