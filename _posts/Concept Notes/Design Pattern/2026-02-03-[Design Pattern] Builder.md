@@ -1,5 +1,6 @@
 ---
 title: "[Design Pattern] Builder"
+slug: "builder pattern"
 author: bienew22
 date: 2026-02-03 16:00:00 +0900
 last_modified_at: 2026-02-16 14:24:00 +0900

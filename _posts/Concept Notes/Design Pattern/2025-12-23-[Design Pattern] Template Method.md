@@ -1,5 +1,6 @@
 ---
 title: "[Design Pattern] Template Method"
+slug: "template method pattern"
 author: bienew22
 date: 2025-12-23 12:59:00 +0900
 categories: [개념 정리, Design Pattern]

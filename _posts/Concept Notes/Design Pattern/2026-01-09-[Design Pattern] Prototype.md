@@ -1,5 +1,6 @@
 ---
 title: "[Design Pattern] Prototype"
+slug: "prototype pattern"
 author: bienew22
 date: 2026-01-09 16:00:00 +0900
 categories: [개념 정리, Design Pattern]

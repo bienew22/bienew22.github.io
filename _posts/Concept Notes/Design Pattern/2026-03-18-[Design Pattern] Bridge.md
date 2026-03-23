@@ -1,5 +1,6 @@
 ---
 title: "[Design Pattern] Bridge"
+slug: "bridge pattern"
 author: bienew22
 date: 2026-03-18 10:00:00 +0900
 last_modified_at: 2026-03-22 12:24:00 +0900

@@ -1,5 +1,6 @@
 ---
 title: "Spring Security 이란?"
+slug: "spring-security"
 author: bienew22
 date: 2026-01-25 13:13:00 +0900
 tags: [spring, spring security]
