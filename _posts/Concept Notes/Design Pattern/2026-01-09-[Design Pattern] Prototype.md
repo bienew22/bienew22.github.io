@@ -3,7 +3,7 @@ title: "[Design Pattern] Prototype"
 author: bienew22
 date: 2026-01-09 16:00:00 +0900
 categories: [개념 정리, Design Pattern]
-tags: [디자인 패턴, 프로토타입 패턴]
+tags: [design pattern]
 media_subpath: /assets/img/_design-pattern
 image:
     path: /base.png

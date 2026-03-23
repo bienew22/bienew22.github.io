@@ -3,7 +3,7 @@ title: "[Algorithm] Euclidean Algorithm"
 author: bienew22
 date: 2026-02-23 16:07:00 +0900
 last_modified_at: 2026-02-27 10:24:00 +0900
-tags: [GCD, 유클리드]
+tags: [gcd, euclidean]
 media_subpath: /assets/img/_algorithm/
 ---
 

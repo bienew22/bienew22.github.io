@@ -3,7 +3,7 @@ title: "[Design Pattern] Template Method"
 author: bienew22
 date: 2025-12-23 12:59:00 +0900
 categories: [개념 정리, Design Pattern]
-tags: [디자인 패턴, 템플릿 메서드 패턴]
+tags: [design pattern]
 media_subpath: /assets/img/_design-pattern
 image:
     path: /base.png

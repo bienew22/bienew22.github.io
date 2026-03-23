@@ -3,7 +3,7 @@ title: "[Algorithm] Diameter of tree"
 author: bienew22
 date: 2025-11-30 21:07:00 +0900
 categories: [개념 정리, 알고리즘]
-tags: [graph, DFS/BFS, DP]
+tags: [graph, dfs/bfs, dp]
 media_subpath: /assets/img/_algorithm/
 ---
 

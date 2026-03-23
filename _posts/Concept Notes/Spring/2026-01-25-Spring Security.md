@@ -2,7 +2,7 @@
 title: "Spring Security 이란?"
 author: bienew22
 date: 2026-01-25 13:13:00 +0900
-tags: [Spring, Spring Security]
+tags: [spring, spring security]
 media_subpath: /assets/img/_spring
 ---
 

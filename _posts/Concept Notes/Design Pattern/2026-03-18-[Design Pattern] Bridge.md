@@ -3,7 +3,7 @@ title: "[Design Pattern] Bridge"
 author: bienew22
 date: 2026-03-18 10:00:00 +0900
 last_modified_at: 2026-03-22 12:24:00 +0900
-tags: [디자인 패턴, 브릿지 패턴]
+tags: [design pattern]
 media_subpath: /assets/img/_design-pattern
 image:
     path: /base.png

@@ -4,7 +4,7 @@ author: bienew22
 date: 2025-11-27 21:00:00 +0900
 last_modified_at: 2025-12-03 17:00:00 +0900
 categories: [개념 정리, Design Pattern]
-tags: [디자인 패턴, 반복자 패턴]
+tags: [design pattern]
 media_subpath: /assets/img/_design-pattern
 image:
     path: /base.png
