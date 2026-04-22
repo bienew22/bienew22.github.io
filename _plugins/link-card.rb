@@ -23,7 +23,7 @@ module Jekyll
       build_card({
         title:  meta[:title]  || @url,
         desc:   meta[:desc]   || "링크를 확인해보세요.",
-        image:  meta[:image]  || "/assets/default-thumbnail.png",
+        image:  meta[:image]  || "/assets/img/default/default-link-thumbnail.png",
         domain: meta[:domain] || safe_domain(@url)
       })
     end
@@ -89,13 +89,16 @@ module Jekyll
 
     # OG 스크래핑
     def fetch_og(url)
+      uri = URI.parse(url)
+      host = uri.host
+
+      if host&.include?("leetcode.com")
+        return fetch_leetcode_og(url)
+      end
+
       html = URI.open(
         url,
-        "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "\
-                        "AppleWebKit/537.36 (KHTML, like Gecko) "\
-                        "Chrome/125.0.0.0 Safari/537.36",
-        "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language" => "ko-KR,ko;q=0.9",
+        "User-Agent" => "Mozilla/5.0",
         open_timeout: 3,
         read_timeout: 3,
         ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
@@ -122,6 +125,52 @@ module Jekyll
     rescue
       nil
     end
+
+    def fetch_leetcode_og(url)
+      # 문제 제목 파싱
+      uri = URI.parse(url)
+      path = uri.path
+
+      slug = path.match(%r{^/problems/([^/]+)/?})&.[](1)
+
+      return nil unless slug
+      
+      # post 요청 보내기
+      graphql = URI("https://leetcode.com/graphql")
+
+      http = Net::HTTP.new(graphql.host, graphql.port)
+      http.use_ssl = true
+      
+      req = Net::HTTP::Post.new(graphql)
+      req["Content-Type"] = "application/json"
+      req["user-agent"] = "Mozilla/5.0"
+
+      req.body = {
+        query: "query getQuestion($titleSlug: String!) { question(titleSlug: $titleSlug) { title content difficulty } }",
+        variables: { titleSlug: slug}
+      }.to_json
+
+      res = http.request(req)
+
+      json = JSON.parse(res.body)
+
+      q = json.dig("data", "question")
+
+      return nil unless q
+
+      # HTML → 텍스트 변환
+      text_desc = Nokogiri::HTML(q["content"]).text.strip.gsub(/\s+/, " ")[0..150]
+
+      {
+        title: "[#{q['difficulty']}] #{q['title']}",
+        desc: text_desc,
+        image: "https://leetcode.com/static/images/LeetCode_Sharing.png",
+        domain: "leetcode.com"
+      }
+    rescue
+      nil
+    end
+
   end
 end
 
