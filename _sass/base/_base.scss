@@ -47,6 +47,8 @@ body {
 }
 
 h1.dynamic-title {
+  font-family: 'Noto Sans KR ExtraBold';
+  
   @include bp.lt(bp.get(lg)) {
     display: none;
 
