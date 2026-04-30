@@ -11,6 +11,31 @@
       {% if paths.size == 0 or page.layout == 'home' %}
         <!-- index page -->
         <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>
+      {% elsif page.layout == 'post' and page.categories.size >0 %}
+        <!-- post page : home > category > sub category > title -->
+        <span>
+          <a href="{{ '/' | relative_url }}">
+            {{- site.data.locales[include.lang].tabs.home | capitalize -}}
+          </a>
+        </span>
+
+        {% assign cat = page.categories[0] %}
+        <span>
+          <a href="{{ cat | slugify | prepend: '/categories/' | append: '/' | relative_url }}">
+            {{- cat -}}
+          </a>
+        </span>
+
+        {% if page.categories.size > 1 %}
+          {% assign series = page.categories[1] %}
+          <span>
+            <a href="{{ series | slugify | prepend: '/categories/' | append: '/' | relative_url }}">
+              {{- series -}}
+            </a>
+          </span>
+        {% endif %}
+
+        <span>{{ page.title }}</span>
 
       {% else %}
         {% for item in paths %}
@@ -47,6 +72,8 @@
     <div id="topbar-title">
       {% if page.layout == 'home' %}
         {{- site.data.locales[include.lang].title | default: site.title -}}
+      {% elsif page.layout == 'post' %}
+        {{- page.title -}}
       {% elsif page.collection == 'tabs' or page.layout == 'page' %}
         {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
         {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}
