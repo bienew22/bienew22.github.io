@@ -86,6 +86,7 @@ media_subpath: /assets/img/_algorithm/manacher
         ![manacher-10](/10.png){: w="60%"}
 
         - 최소 보장 구간은 `C`를 기준으로 하는 내부 구간만큼 보장하는 것입니다.
+        - 따라서 `C + R - i + 1` 부터 기본 확장으로 필랜드롬의 길이를 구하면 됩니다.
 
 ---
 
