@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: bienew22 # the main title
 
-tagline: back-end developer # it will display as the subtitle
+tagline: 나의 기록 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Notes and tutorials on Java, Python, and algorithms for continuous learning.
