@@ -26,5 +26,23 @@
   // Run tasks in macOS
   "terminal.integrated.profiles.osx": {
     "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
+  },
+  "jekll.autocomplete.gemini.api": "fill your api key",
+  "jekll.autocomplete.commands": {
+    "link card": {
+      "sort": "100",
+      "desc": "링크 카드",
+      "insert": "{% linkcard ${1:링크} %}"
+    },
+    "toggle notion": {
+      "sort": "101",
+      "desc": "노션 스타일의 토글",
+      "insert": "{% capture body1 %}\n${1:내용}\n{% endcapture %}\n{% include my/notion-toggle.html\ntitle=\"${2:제목}\"\nlevel=1\ncontent=body1\nopen=true\n%}"
+    },
+    "inline math": {
+      "sort": "102",
+      "desc": "내가 만든 수학 블럭",
+      "insert": "{% math \"${1:내용}\" inline=true %}"
+    }
   }
 }
