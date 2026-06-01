@@ -27,8 +27,18 @@
   "terminal.integrated.profiles.osx": {
     "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
   },
-  "jekll.autocomplete.gemini.api": "fill your api key",
+  "jekll.autocomplete.gemini.api": "",
   "jekll.autocomplete.commands": {
+    "new blank": {
+      "sort": "900",
+      "desc": "new blank, 강제 빈칸 입력",
+      "insert": "&nbsp;"
+    },
+    "new line": {
+      "sort": "901",
+      "desc": "new line, html 빈줄",
+      "insert": "<br/>"
+    },
     "link card": {
       "sort": "100",
       "desc": "링크 카드",
